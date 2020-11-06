@@ -1,0 +1,5 @@
+
+
+for f in aliases zlogin zlogout zprofile zshenv zshrc;
+    do ln -s ~/.shell_dotfiles/$f ~/.$f;
+done
