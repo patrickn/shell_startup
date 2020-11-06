@@ -1,0 +1,19 @@
+# ls
+#alias ll='ls -l --color=auto'
+alias ll='exa -l'
+
+# confirmation #
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# Misc shell
+alias ..='cd ..'
+alias ...='cd .. && cd ..'
+alias ....='cd .. && cd .. & cd ..'
+
+# Applications
+alias h=history
+alias fd=fdfind
+
+alias woof='echo -e \\a'
