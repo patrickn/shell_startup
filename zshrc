@@ -45,7 +45,7 @@ function nd {
 }
 
 # exa
-export EXA_COLORS="ur=2;32:uu=2;32"
+export EXA_COLORS="ur=2;32:uu=2;32:Makefile=35:ex=31:sn=32:ux=32:ue=32:*.md=34;04;4"
 
 # zsh-z
 source ~/local/plugins/zsh-z.plugin.zsh
