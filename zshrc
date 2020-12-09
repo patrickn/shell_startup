@@ -44,6 +44,11 @@ function nd {
     mkdir -pv $1 && cd $1
 }
 
+# tilix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 # exa
 export EXA_COLORS="ur=2;32:uu=2;32:Makefile=35:ex=31:sn=32:ux=32:ue=32:*.md=34;04;4"
 
