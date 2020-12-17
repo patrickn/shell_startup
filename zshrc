@@ -64,6 +64,9 @@ VERSION=v15.0.1
 DISTRO=linux-x64
 export PATH=/opt/nodejs/node-$VERSION-$DISTRO/bin:$PATH
 
+# Running Docker in user space (rootless)
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
 source $HOME/.aliases
 
 # export PROMPT='%m:%~> '
