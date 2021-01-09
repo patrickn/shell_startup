@@ -12,6 +12,9 @@ alias ..='cd ..'
 alias ...='cd .. && cd ..'
 alias ....='cd .. && cd .. & cd ..'
 
+# CLS & scrollback buffer
+alias cls='printf "\033c"'
+
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 

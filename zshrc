@@ -60,12 +60,9 @@ zstyle ':completion:*' menu select
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # Nodejs
-VERSION=v15.0.1
+VERSION=v14.15.4
 DISTRO=linux-x64
-export PATH=/opt/nodejs/node-$VERSION-$DISTRO/bin:$PATH
-
-# Running Docker in user space (rootless)
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
 
 source $HOME/.aliases
 
