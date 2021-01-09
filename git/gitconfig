@@ -1,0 +1,33 @@
+
+[includeIf "gitdir/i:~/.shell_dotfiles/"]
+   path = ~/.gitconfig-default
+
+[includeIf "gitdir/i:~/Development/"]
+   path = ~/.gitconfig-default
+
+[includeIf "gitdir/i:~/Work/"]
+   path = ~/.gitconfig-deltaray
+
+[core]
+	editor = vi
+	longpaths = true
+	hooksPath = git_hooks
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lg-ascii = log --graph --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit
+	aliases = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+	conflicts = diff --name-only --diff-filter=U
+
+[interactive]
+	diffFilter = delta --color-only
+
+[pull]
+	rebase = true
+
+[gc]
+	autoDetach = false
