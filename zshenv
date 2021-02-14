@@ -15,5 +15,5 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:/opt/cross-pi-gcc/bin
 export PATH=$PATH:/mnt/c/opt/vcpkg
 
-expor tMANPATH=$MANPATH:~/local/man
+export MANPATH=$MANPATH:~/local/man
 
