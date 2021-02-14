@@ -31,3 +31,5 @@
 
 [gc]
 	autoDetach = false
+[init]
+	defaultBranch = main
