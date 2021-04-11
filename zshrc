@@ -44,6 +44,10 @@ function nd {
     mkdir -pv $1 && cd $1
 }
 
+function hr {
+    printf '—%.0s' {1..$COLUMNS}
+}
+
 # tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
@@ -60,12 +64,15 @@ zstyle ':completion:*' menu select
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # Nodejs
-VERSION=v14.15.4
-DISTRO=linux-x64
-export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+# VERSION=v14.15.4
+# DISTRO=linux-x64
+# export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 source $HOME/.aliases
 
 # export PROMPT='%m:%~> '
 # Change prompt colour if last command exited with error.
-export PROMPT='%(?.%(!.#.%m:%~> ).%F{6}%B%m:%~> %b%f)'
+export PROMPT='%(?.%(!.#.:%~> ).%F{6}%B:%~> %b%f)'
