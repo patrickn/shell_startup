@@ -28,6 +28,7 @@ setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history 
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+setopt PROMPT_SUBST              # Various substitutions performed in prompts.
 
 # cause up/down arrow keys to search history
 autoload -U up-line-or-beginning-search
@@ -40,13 +41,7 @@ bindkey "${terminfo[kcud1]}" down-line-or-beginning-search # Down
 # case-insensitive matching only if there are no case-sensitive matches
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
-function nd {
-    mkdir -pv $1 && cd $1
-}
-
-function hr {
-    printf '—%.0s' {1..$COLUMNS}
-}
+source ~/.shell_dotfiles/zsh/functions.zsh
 
 # tilix
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
@@ -75,4 +70,6 @@ source $HOME/.aliases
 
 # export PROMPT='%m:%~> '
 # Change prompt colour if last command exited with error.
-export PROMPT='%(?.%(!.#.:%~> ).%F{6}%B:%~> %b%f)'
+# export PROMPT='%(?.%(!.#.:%~> ).%F{6}%B:%~> %b%f)'
+export PS1='$(fancy_dir) $(git_dot)$(seasonal_chevrons) '
+export RPROMPT='$(git_branch)'
