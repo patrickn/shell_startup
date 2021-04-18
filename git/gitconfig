@@ -1,17 +1,12 @@
-
-[includeIf "gitdir/i:~/.shell_dotfiles/"]
-   path = ~/.gitconfig-default
-
-[includeIf "gitdir/i:~/Development/"]
-   path = ~/.gitconfig-default
-
-[includeIf "gitdir/i:~/Work/"]
-   path = ~/.gitconfig-deltaray
+[user]
+	name = Patrick Neave
+	email = patrick.neave@deltaray.eu
 
 [core]
 	editor = vi
 	longpaths = true
 	hooksPath = git_hooks
+	autocrlf = false
 
 [alias]
 	co = checkout
@@ -22,6 +17,7 @@
 	lg-ascii = log --graph --pretty=format:'%h -%d %s (%cr) <%an>' --abbrev-commit
 	aliases = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 	conflicts = diff --name-only --diff-filter=U
+   brs = branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short) | %(color:bold green)%(committerdate:relative) | %(color:blue)%(subject)%(color:reset)' --color=always
 
 [interactive]
 	diffFilter = delta --color-only
@@ -29,7 +25,5 @@
 [pull]
 	rebase = true
 
-[gc]
-	autoDetach = false
 [init]
 	defaultBranch = main
