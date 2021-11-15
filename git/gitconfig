@@ -18,6 +18,7 @@
 	aliases = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
 	conflicts = diff --name-only --diff-filter=U
    brs = branch --sort=-committerdate --format='%(HEAD)%(color:yellow)%(refname:short) | %(color:bold green)%(committerdate:relative) | %(color:blue)%(subject)%(color:reset)' --color=always
+	sw = switch
 
 [interactive]
 	diffFilter = delta --color-only
@@ -27,3 +28,7 @@
 
 [init]
 	defaultBranch = main
+[push]
+	followTags = true
+[status]
+	submoduleSummary = true

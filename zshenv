@@ -8,6 +8,8 @@
 
 # Update paths
 export PATH=$PATH:~/local/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/opt/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:/usr/local/go/bin
@@ -16,4 +18,4 @@ export PATH=$PATH:/opt/cross-pi-gcc/bin
 export PATH=$PATH:/mnt/c/opt/vcpkg
 
 export MANPATH=$MANPATH:~/local/man
-
+export MANPATH=$MANPATH:/opt/bin
